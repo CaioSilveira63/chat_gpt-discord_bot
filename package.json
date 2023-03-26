@@ -10,6 +10,7 @@
   "keywords": [],
   "author": "Caio Silveira",
   "license": "ISC",
+  "repository": "https://github.com/CaioSilveira63/chat_gpt-discord_bot",
   "dependencies": {
     "discord.js": "^14.8.0",
     "dotenv": "^16.0.3",
