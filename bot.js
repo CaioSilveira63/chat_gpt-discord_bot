@@ -5,40 +5,44 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { deployCommands } = require("./deployCommands");
 
-if (!process.env.discordToken) {
-  throw new Error(
-    "No discord token provided! Please add a .env file with the discord token in it. (See .env.example for an example)"
-  );
-}
+try {
+  if (!process.env.discordToken) {
+    throw new Error(
+      "No discord token provided! Please add a .env file with the discord token in it. (See .env.example for an example)"
+    );
+  }
 
-if (!process.env.openAIToken) {
-  throw new Error(
-    "No OpenAI api token provided! Please add a .env file with the OpenAI api token in it. (See .env.example for an example)"
-  );
-}
-if (!process.env.botBehaviour) {
-  throw new Error(
-    "No bot behaviour description provided! Please add a .env file with the bot behaviour description in it. (See .env.example for an example)"
-  );
-}
+  if (!process.env.openAIToken) {
+    throw new Error(
+      "No OpenAI api token provided! Please add a .env file with the OpenAI api token in it. (See .env.example for an example)"
+    );
+  }
+  if (!process.env.botBehaviour) {
+    throw new Error(
+      "No bot behaviour description provided! Please add a .env file with the bot behaviour description in it. (See .env.example for an example)"
+    );
+  }
 
-if (!process.env.clientId) {
-  throw new Error(
-    "No clientId provided! Please add a .env file with the clientId of your bot in it. (See .env.example for an example)"
-  );
-}
-if (!process.env.guildId) {
-  throw new Error(
-    "No guildId provided! Please add a .env file with the guildId in it. (See .env.example for an example)"
-  );
-}
+  if (!process.env.clientId) {
+    throw new Error(
+      "No clientId provided! Please add a .env file with the clientId of your bot in it. (See .env.example for an example)"
+    );
+  }
+  if (!process.env.guildId) {
+    throw new Error(
+      "No guildId provided! Please add a .env file with the guildId in it. (See .env.example for an example)"
+    );
+  }
 
-if (!process.env.channelID) {
-  throw new Error(
-    "No channelID provided! Please add a .env file with the channelID in it. (See .env.example for an example)"
-  );
+  if (!process.env.channelID) {
+    throw new Error(
+      "No channelID provided! Please add a .env file with the channelID in it. (See .env.example for an example)"
+    );
+  }
+} catch (e) {
+  console.error(e);
+  process.exit();
 }
-
 const client = new Client({
   intents: [
     GatewayIntentBits.DirectMessages,
