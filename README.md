@@ -6,7 +6,7 @@
 
 ### **ATTENTION:**
 
-That's just a simple implementation of a ChatGPT 3 discord bot on a specific text channel on a specific server, and that bot is not ment to be utilized by a chat with multiple people, becouse it will recognize all users as a single pearson talking to it.
+That's just a simple implementation of a ChatGPT 3 discord bot on a specific text channel on a specific server, and this bot is not ment to be utilized by a chat with multiple people, becouse it will recognize all users as a single pearson talking to it.
 
 ## **How to deploy:**
 
