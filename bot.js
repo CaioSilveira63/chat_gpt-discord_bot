@@ -108,15 +108,4 @@ client.on("ready", () => {
   console.log("The AI bot is online");
 });
 
-client.on("messageCreate", async (message) => {
-  if (message.author.bot) return;
-
-  if (message.channel.id === process.env.channelID) {
-    await message.channel.sendTyping();
-    console.log("Message received: " + message.content);
-    const answer = await ask(message.content);
-    message.channel.send(answer);
-  }
-});
-
 client.login(process.env.discordToken);
